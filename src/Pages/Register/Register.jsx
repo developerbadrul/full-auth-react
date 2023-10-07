@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialSignIn from "../../components/SocialSignIn/SocialSignIn";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -7,7 +7,7 @@ import LoggedUserInfo from "../../components/LoogedUserInfo/LoggedUserInfo";
 
 const Register = () => {
     const {signUpPassWord, user} = useContext(AuthContext)
-
+    const navigate = useNavigate()
     const handleRegister =(e)=>{
         e.preventDefault();
         const email = e.target.email.value;
@@ -16,6 +16,7 @@ const Register = () => {
         .then(result=> console.log(result.user))
         .catch(error=> console.log(error.message))
         console.log(email, password);
+        navigate("/dashboard")
     }
     return user ? <LoggedUserInfo></LoggedUserInfo> : (
         <div className="hero  bg-base-200">

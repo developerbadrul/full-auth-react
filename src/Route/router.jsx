@@ -6,6 +6,7 @@ import Webinars from "../Pages/Webinars/Webinars";
 import Blog from "../Pages/Blog/Blog";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import Dashboard from "../Pages/Dashboard/Dashboard";
 
 const myRoute = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const myRoute = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
+            },
+            {
+                path: "/dashboard",
+                element: <Dashboard></Dashboard>
             },
         ]
     }
