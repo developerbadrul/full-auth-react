@@ -1,0 +1,139 @@
+[
+    {
+        "id": 1,
+        "title": "Cybersecurity Training Bootcamp",
+        "pic": "cybersecurity_pic.jpg",
+        "description": "Master the skills to protect digital assets in this intensive bootcamp.",
+        "duration": "4 weeks",
+        "price": "$999",
+        "event_materials": [
+            "Cybersecurity Handbook",
+            "Penetration Testing Toolkit",
+            "Security Best Practices Guide",
+            "Case Studies",
+            "Certification Exam Prep"
+        ],
+        "course_content": [
+            "Module 1: Introduction to Cybersecurity",
+            "Module 2: Network Security and Firewalls",
+            "Module 3: Ethical Hacking Techniques",
+            "Module 4: Incident Response and Recovery",
+            "Module 5: Certification Preparation"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Cloud Computing Webinar Series",
+        "pic": "cloud_computing_pic.jpg",
+        "description": "Explore the latest trends and technologies in cloud computing.",
+        "duration": "4 webinars (1 hour each)",
+        "price": "Free",
+        "event_materials": [
+            "Webinar Recordings",
+            "Cloud Service Providers Comparison",
+            "Hands-on Labs",
+            "Cloud Adoption Strategy",
+            "Q&A Session Transcripts"
+        ],
+        "course_content": [
+            "Webinar 1: Introduction to Cloud Computing",
+            "Webinar 2: Cloud Service Models (IaaS, PaaS, SaaS)",
+            "Webinar 3: Cloud Security and Compliance",
+            "Webinar 4: Hands-on Cloud Labs",
+            "Webinar 5: Cloud Migration Strategies"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "AI and Machine Learning Workshop",
+        "pic": "ai_ml_workshop_pic.jpg",
+        "description": "Get hands-on experience with AI and machine learning tools and techniques.",
+        "duration": "2 days",
+        "price": "$299",
+        "event_materials": [
+            "Workshop Handbook",
+            "Machine Learning Frameworks",
+            "Real-world AI Applications",
+            "Coding Exercises",
+            "AI Research Papers"
+        ],
+        "course_content": [
+            "Day 1 - Workshop Session 1: Introduction to AI and Machine Learning",
+            "Day 1 - Workshop Session 2: Supervised and Unsupervised Learning",
+            "Day 1 - Workshop Session 3: Deep Learning and Neural Networks",
+            "Day 2 - Workshop Session 4: Natural Language Processing",
+            "Day 2 - Workshop Session 5: AI Applications Workshop"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Data Science Certification Program",
+        "pic": "data_science_pic.jpg",
+        "description": "Become a certified data scientist and analyze complex datasets.",
+        "duration": "12 weeks",
+        "price": "$1,199",
+        "event_materials": [
+            "Course Syllabus",
+            "Data Science Tools",
+            "Data Visualization Examples",
+            "Data Analysis Projects",
+            "Certification Exam Prep"
+        ],
+        "course_content": [
+            "Week 1: Introduction to Data Science",
+            "Week 2: Data Cleaning and Preprocessing",
+            "Week 3: Statistical Analysis and Data Visualization",
+            "Week 4: Machine Learning and Predictive Analytics",
+            "Week 5: Advanced Machine Learning Techniques",
+            "Week 6: Data Science Projects",
+            "Week 7: Data Science in Real-World Applications",
+            "Week 8: Capstone Data Science Project"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "IT Project Management Seminar",
+        "pic": "it_project_management_pic.jpg",
+        "description": "Learn effective project management strategies for IT projects.",
+        "duration": "1 day",
+        "price": "$149",
+        "event_materials": [
+            "Seminar Presentation Slides",
+            "Project Management Templates",
+            "IT Project Case Studies",
+            "Agile Methodology Guide",
+            "PM Certification Info"
+        ],
+        "course_content": [
+            "Session 1: Project Initiation and Planning",
+            "Session 2: Agile and Scrum in IT Projects",
+            "Session 3: Risk Management and Quality Assurance",
+            "Session 4: IT Project Execution and Monitoring",
+            "Session 5: Project Closure and Lessons Learned"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "DevOps Training Program",
+        "pic": "devops_pic.jpg",
+        "description": "Enhance your DevOps skills and streamline software development processes.",
+        "duration": "6 weeks",
+        "price": "$799",
+        "event_materials": [
+            "DevOps Handbook",
+            "CI/CD Pipeline Setup Guide",
+            "Infrastructure as Code Examples",
+            "DevOps Tools Overview",
+            "Certification Exam Study Materials"
+        ],
+        "course_content": [
+            "Week 1: Introduction to DevOps and CI/CD",
+            "Week 2: Infrastructure as Code (IaC)",
+            "Week 3: Containerization with Docker",
+            "Week 4: Orchestration with Kubernetes",
+            "Week 5: DevOps Best Practices",
+            "Week 6: DevOps Case Studies",
+            "Week 7: DevOps Certification Preparation"
+        ]
+    }
+]
