@@ -26,6 +26,7 @@ const myRoute = createBrowserRouter([
             {
                 path: "/courses/:id",
                 element: <CoursesDetails></CoursesDetails>,
+                loader: ()=> fetch("/events.json")
             },
             {
                 path: "/webinars",
