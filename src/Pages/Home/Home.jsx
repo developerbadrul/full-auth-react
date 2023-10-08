@@ -2,6 +2,7 @@
 import Banner from "../../assets/single-instructor-1.png"
 import { PiFolderSimpleLockFill } from "react-icons/pi";
 import { BiSupport, BiBookBookmark} from "react-icons/bi";
+import About from "../../assets/about-pic.jpg";
 const Home = () => {
     return (
         <div>
@@ -40,6 +41,17 @@ const Home = () => {
                         <h2 className="card-title"> Dedicated Support </h2>
                         <p> Benefit from personalized assistance and guidance from instructors and support staff throughout your learning process, ensuring you have the help you need to succeed. </p>
                     </div>
+                </div>
+            </div>
+            {/* about me section  */}
+            <div className="flex w-11/12 mx-auto items-center gap-10 py-10">
+                <div id="about-left-side" className="basis-1/2"> 
+                    <img className="rounded-lg" src={About} alt="about" />
+                </div>
+                <div id="about-right-side" className="basis-1/2">
+                    <p className="text-orange-600 font-semibold text-xl">About Me</p>
+                    <h1 className="text-4xl font-extrabold py-3">I'm teaching online for about 5+ years on programming</h1>
+                    <p className="text-justify text-lg">A teacher is an educational professional who plays a pivotal role in shaping the knowledge, skills, and character of students. They possess a profound passion for their subject matter and a dedication to nurturing the intellectual and personal growth of their learners. Effective teachers employ a variety of teaching methods, adapt to the unique needs of each student, and serve as mentors, motivators, and sources of inspiration to encourage a lifelong love of learning.</p>
                 </div>
             </div>
         </div>
