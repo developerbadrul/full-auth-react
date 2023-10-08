@@ -1,9 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 import Banner from "../../assets/single-instructor-1.png"
 import { PiFolderSimpleLockFill } from "react-icons/pi";
-import { BiSupport, BiBookBookmark} from "react-icons/bi";
+import { BiSupport, BiBookBookmark } from "react-icons/bi";
 import About from "../../assets/about-pic.jpg";
+import Event from "../../components/Event/Event";
+import { useEffect, useState } from "react";
 const Home = () => {
+    const [events, setEvent] = useState(null);
+    useEffect(() => {
+        fetch("/events.json")
+            .then(res => res.json())
+            .then(data => setEvent(data))
+    }, [])
+
+    console.log(events);
     return (
         <div>
             {/* banner section  */}
@@ -20,6 +30,7 @@ const Home = () => {
                 </div>
             </div>
             {/* feature section  */}
+            <h1 className="text-6xl font-bold text-center mt-4">Features</h1>
             <div className="flex gap-4 w-11/12 mx-auto justify-center py-7">
                 <div className="card card-side bg-base-100 shadow-2xl">
                     <figure><PiFolderSimpleLockFill className="text-[300px] text-orange-600 px-3"></PiFolderSimpleLockFill></figure>
@@ -45,13 +56,22 @@ const Home = () => {
             </div>
             {/* about me section  */}
             <div className="flex w-11/12 mx-auto items-center gap-10 py-10">
-                <div id="about-left-side" className="basis-1/2"> 
+                <div id="about-left-side" className="basis-1/2">
                     <img className="rounded-lg" src={About} alt="about" />
                 </div>
                 <div id="about-right-side" className="basis-1/2">
                     <p className="text-orange-600 font-semibold text-xl">About Me</p>
                     <h1 className="text-4xl font-extrabold py-3">I'm teaching online for about 5+ years on programming</h1>
                     <p className="text-justify text-lg">A teacher is an educational professional who plays a pivotal role in shaping the knowledge, skills, and character of students. They possess a profound passion for their subject matter and a dedication to nurturing the intellectual and personal growth of their learners. Effective teachers employ a variety of teaching methods, adapt to the unique needs of each student, and serve as mentors, motivators, and sources of inspiration to encourage a lifelong love of learning.</p>
+                </div>
+            </div>
+            {/* event section  */}
+            <h1 className="text-center text-6xl font-bold py-4">UpComing Events</h1>
+            <div className="w-11/12 mx-auto py-4">
+                <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {
+                        events?.map(event => <Event key={event.id} event={event}></Event>)
+                    }
                 </div>
             </div>
         </div>
