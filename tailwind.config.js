@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      // fontFamily:{
+      //   "myFont": ["Urbanist"],
+      // },
+    },
   },
   daisyui: {
     themes: ["light"],

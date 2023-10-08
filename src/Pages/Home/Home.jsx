@@ -1,8 +1,47 @@
-
+/* eslint-disable react/no-unescaped-entities */
+import Banner from "../../assets/single-instructor-1.png"
+import { PiFolderSimpleLockFill } from "react-icons/pi";
+import { BiSupport, BiBookBookmark} from "react-icons/bi";
 const Home = () => {
     return (
         <div>
-            this is home
+            {/* banner section  */}
+            <div className="bg-gradient-to-r from-cyan-200 to-white-500">
+                <div className="flex w-11/12 mx-auto items-center">
+                    <div id="banner-left-side">
+                        <p className="text-orange-600 text-2xl font-bold">Start learning from home</p>
+                        <h1 className="text-7xl font-extrabold py-2">Connect With Adam <br /> & start learning</h1>
+                        <p className="text-xl font-bold">I'm highly experienced in web programming. I'm teaching online <br /> for about 20+ years. I can help you to improve your skill.</p>
+                    </div>
+                    <div id="banner-right-sides">
+                        <img src={Banner} alt="banner" />
+                    </div>
+                </div>
+            </div>
+            {/* feature section  */}
+            <div className="flex gap-4 w-11/12 mx-auto justify-center py-7">
+                <div className="card card-side bg-base-100 shadow-2xl">
+                    <figure><PiFolderSimpleLockFill className="text-[300px] text-orange-600 px-3"></PiFolderSimpleLockFill></figure>
+                    <div className="card-body">
+                        <h2 className="card-title">Life Time Access</h2>
+                        <p> Gain unlimited access to course content, allowing you to learn at your own pace, revisit materials whenever you want, and stay up-to-date with the latest information. </p>
+                    </div>
+                </div>
+                <div className="card card-side bg-base-100 shadow-2xl">
+                    <figure><BiBookBookmark className="text-[300px] text-orange-600  px-3"></BiBookBookmark></figure>
+                    <div className="card-body">
+                        <h2 className="card-title"> Free Course Materials </h2>
+                        <p> Access a wealth of learning resources at no extra cost, including textbooks, study guides, and supplementary materials, enhancing your educational journey. </p>
+                    </div>
+                </div>
+                <div className="card card-side bg-base-100 shadow-2xl">
+                    <figure><BiSupport className="text-[300px] text-orange-600 px-3"></BiSupport></figure>
+                    <div className="card-body">
+                        <h2 className="card-title"> Dedicated Support </h2>
+                        <p> Benefit from personalized assistance and guidance from instructors and support staff throughout your learning process, ensuring you have the help you need to succeed. </p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

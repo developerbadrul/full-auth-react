@@ -7,6 +7,7 @@ import Blog from "../Pages/Blog/Blog";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Dashboard from "../Pages/Dashboard/Dashboard";
+import CoursesDetails from "../Pages/CoursesDetails/CoursesDetails";
 
 const myRoute = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const myRoute = createBrowserRouter([
             {
                 path: "/courses",
                 element: <Courses></Courses>
+            },
+            {
+                path: "/courses/:id",
+                element: <CoursesDetails></CoursesDetails>,
             },
             {
                 path: "/webinars",
