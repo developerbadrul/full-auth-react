@@ -6,22 +6,26 @@ import LoggedUserInfo from "../../components/LoogedUserInfo/LoggedUserInfo";
 
 
 const Register = () => {
-    const {signUpPassWord, user} = useContext(AuthContext)
+    const { signUpPassWord, user, loading } = useContext(AuthContext)
     const navigate = useNavigate()
-    const handleRegister =(e)=>{
+
+    const handleRegister = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
+        if (loading) {
+            return <div className="flex items-center justify-center h-screen"><span className="loading loading-bars loading-lg"></span></div>
+        }
         signUpPassWord(email, password)
-        .then(result=> console.log(result.user))
-        .catch(error=> console.log(error.message))
+            .then(result => console.log(result.user))
+            .catch(error => console.log(error.message))
         console.log(email, password);
         navigate("/dashboard")
     }
     return user ? <LoggedUserInfo></LoggedUserInfo> : (
         <div className="hero  bg-base-200">
             <div className="hero-content flex-col">
-            <h1 className="text-3xl font-bold">Register now!</h1>
+                <h1 className="text-3xl font-bold">Register now!</h1>
                 <div className="text-center lg:text-left">
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -30,7 +34,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="email" name="name" placeholder="Enter Your Name" className="input input-bordered"  />
+                            <input type="email" name="name" placeholder="Enter Your Name" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialSignIn from "../../components/SocialSignIn/SocialSignIn";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -8,18 +8,25 @@ import LoggedUserInfo from "../../components/LoogedUserInfo/LoggedUserInfo";
 
 
 const Login = () => {
-    const { signInPass, user } = useContext(AuthContext)
-    const navigate = useNavigate();
+    const { signInPass, user, loading } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
+        if (loading) {
+            return <div className="flex items-center justify-center h-screen"><span className="loading loading-bars loading-lg"></span></div>
+        }
+        
         signInPass(email, password)
-            .then(result => console.log(result.user))
+            .then(
+                navigate(location?.state ? location.state : "/")
+            )
             .catch(err => console.log(err.message))
 
-    navigate(`/dashboard`)
+
     }
     return user ? (
         <LoggedUserInfo></LoggedUserInfo>

@@ -26,7 +26,7 @@ const CoursesDetails = () => {
                     <div>
                         <div className="join join-vertical w-full py-5">
                             <div className="collapse collapse-arrow join-item border border-base-300">
-                                <input type="radio" name="my-accordion-4" checked="checked" />
+                                <input type="radio" name="my-accordion-4" defaultChecked="checked" />
                                 <div className="collapse-title text-xl font-semibold  text-orange-500">
                                     Event Module
                                 </div>
@@ -44,7 +44,7 @@ const CoursesDetails = () => {
             </div>
             <div id="show-details-right" className="col-span-1">
                 {/* course img section  */}
-                <div className="card w-96 bg-base-100 shadow-xl my-5">
+                <div className="card md:w-96 bg-base-100 shadow-xl my-5">
                     <figure><img src={showDetails.pic} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{showDetails.title}</h2>

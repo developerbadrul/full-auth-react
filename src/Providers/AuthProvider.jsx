@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from 'react';
-import { getAuth,GithubAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GithubAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import app from '../firebase.init';
 
 export const AuthContext = createContext(null);
@@ -10,31 +10,38 @@ const auth = getAuth(app)
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true)
     console.log(user);
 
     const signUpPassWord = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     };
 
     const signInPass = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     const logOut = () => {
+        setLoading(true)
         return signOut(auth)
     }
 
     const googleSignIn = () => {
-       return signInWithPopup(auth, googleProvider)
+        setLoading(true)
+        return signInWithPopup(auth, googleProvider)
     }
 
-    const githubSignIn = ()=>{
-       return signInWithPopup(auth, githubProvider)
+    const githubSignIn = () => {
+        setLoading(true)
+        return signInWithPopup(auth, githubProvider)
     }
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             console.log("After State Change", currentUser);
             setUser(currentUser);
+            setLoading(false)
         });
         return () => unSubscribe();
     }, [])
@@ -43,6 +50,7 @@ const AuthProvider = ({ children }) => {
         signUpPassWord,
         signInPass,
         user,
+        loading,
         logOut,
         googleSignIn,
         githubSignIn
