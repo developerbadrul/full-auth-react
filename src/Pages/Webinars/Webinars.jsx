@@ -6,9 +6,9 @@ const Webinars = () => {
     return (
         <div>
             <div className="w-11/12 mx-auto">
-                <h1 className="text-center font-semibold text-5xl py-5">Web Programming Career Guideline</h1>
+                <h1 className="text-center font-semibold md:text-5xl py-5">Web Programming Career Guideline</h1>
                 <img className="w-11/12 mx-auto mb-16" src={Webiner} alt="Webiner" />
-                <div className="card w-9/12 bg-base-100 shadow-xl p-7 absolute left-0 right-0 mx-auto bottom-[-140px]">
+                <div className="card hidden md:block w-9/12 bg-base-100 shadow-xl p-7 absolute left-0 right-0 mx-auto bottom-[-140px]">
                     <div className="flex justify-around">
                         <div className="flex text-4xl gap-4 items-center">
                             <p><BsFillCalendar2DateFill></BsFillCalendar2DateFill></p>
@@ -26,7 +26,7 @@ const Webinars = () => {
                     <div></div>
                 </div>
                 <div>
-                    <h1 className="text-5xl font-semibold my-3">
+                    <h1 className="md:text-5xl font-semibold my-3">
                         About The Webinar
                     </h1>
                     <p className="text-justify">

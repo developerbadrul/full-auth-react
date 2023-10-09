@@ -3,8 +3,6 @@ import Banner from "../../assets/single-instructor-1.png"
 import { PiFolderSimpleLockFill } from "react-icons/pi";
 import { BiSupport, BiBookBookmark } from "react-icons/bi";
 import About from "../../assets/about-pic.jpg";
-// import Event from "../../components/Event/Event";
-// import { useEffect, useState } from "react";
 import Events from "../../components/Events/Events";
 const Home = () => {
     
@@ -14,7 +12,7 @@ const Home = () => {
         <div>
             {/* banner section  */}
             <div className="bg-gradient-to-r from-cyan-200 to-white-500">
-                <div className="flex w-11/12 mx-auto items-center">
+                <div className="flex flex-col md:flex-row p-2 md:w-11/12 mx-auto items-center">
                     <div id="banner-left-side">
                         <p className="text-orange-600 text-2xl font-bold">Start learning from home</p>
                         <h1 className="text-7xl font-extrabold py-2">Connect With Adam <br /> & start learning</h1>
@@ -27,7 +25,7 @@ const Home = () => {
             </div>
             {/* feature section  */}
             <h1 className="text-6xl font-bold text-center mt-4">Features</h1>
-            <div className="flex gap-4 w-11/12 mx-auto justify-center py-7">
+            <div className="flex flex-col md:flex-row gap-4 md:w-11/12 mx-auto justify-center py-7">
                 <div className="card card-side bg-base-100 shadow-2xl">
                     <figure><PiFolderSimpleLockFill className="text-[300px] text-orange-600 px-3"></PiFolderSimpleLockFill></figure>
                     <div className="card-body">
@@ -51,7 +49,7 @@ const Home = () => {
                 </div>
             </div>
             {/* about me section  */}
-            <div className="flex w-11/12 mx-auto items-center gap-10 py-10">
+            <div className="flex flex-col md:flex-row p-2 md:w-11/12 mx-auto items-center gap-10 py-10">
                 <div id="about-left-side" className="basis-1/2">
                     <img className="rounded-lg" src={About} alt="about" />
                 </div>

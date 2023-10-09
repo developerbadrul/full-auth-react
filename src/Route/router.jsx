@@ -22,12 +22,12 @@ const myRoute = createBrowserRouter([
             },
             {
                 path: "/courses",
-                element: <Courses></Courses>
+                element: <PrivateRoute><Courses></Courses></PrivateRoute>
             },
             {
                 path: "/courses/:id",
                 element: <PrivateRoute><CoursesDetails></CoursesDetails></PrivateRoute>,
-                loader: ()=> fetch("/events.json")
+                loader: () => fetch("/events.json")
             },
             {
                 path: "/webinars",
