@@ -2,6 +2,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.png"
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -16,8 +17,16 @@ const Navbar = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(console.log("successfull Logout"))
-            .catch(console.log("logout Error"))
+            .then(result => {
+                console.log("successfull Logout", result)
+                if (!result) {
+                    toast.success("Successfully Logout")
+                }
+            })
+            .catch(err => {
+                toast.error(err)
+            })
+
         navigate("/")
     }
 

@@ -13,7 +13,7 @@ const Home = () => {
             .then(data => setEvent(data))
     }, [])
 
-    console.log(events);
+    // console.log(events);
     return (
         <div>
             {/* banner section  */}

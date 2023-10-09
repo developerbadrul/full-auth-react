@@ -2,21 +2,36 @@ import { useContext } from "react";
 import { FaGooglePlusG, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 const SocialSignIn = () => {
     const { googleSignIn, githubSignIn } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
     const handleGoogleSign = () => {
         googleSignIn()
-            .then(
-                navigate(location?.state ? location.state : "/")
-            )
+            .then(result => {
+                if (result.user) {
+                    navigate(location?.state ? location.state : "/"),
+                        toast.success("Successfully Login")
+                }
+            })
+
+            .catch(err => {
+                toast.error(err)
+            })
     }
-    const handleGithubLogin = () =>{
+    const handleGithubLogin = () => {
         githubSignIn()
-        .then(
-            navigate(location?.state ? location.state : "/")
-        )
+            .then(result => {
+                if (result.user) {
+                    navigate(location?.state ? location.state : "/"),
+                        toast.success("Successfully Login")
+                }
+            })
+
+            .catch(err => {
+                toast.error(err)
+            })
     }
     return (
         <div className="text-center">

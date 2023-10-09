@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 const Event = ({ event }) => {
-    console.log("event fount", event);
+    // console.log("event fount", event);
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">

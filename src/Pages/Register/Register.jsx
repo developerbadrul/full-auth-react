@@ -1,14 +1,16 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialSignIn from "../../components/SocialSignIn/SocialSignIn";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import LoggedUserInfo from "../../components/LoogedUserInfo/LoggedUserInfo";
+import toast from "react-hot-toast";
 
 
 const Register = () => {
     const { signUpPassWord, user, loading } = useContext(AuthContext)
     const navigate = useNavigate()
-
+    const location = useLocation()
+    console.log("location in register", location);
     const handleRegister = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -17,10 +19,18 @@ const Register = () => {
             return <div className="flex items-center justify-center h-screen"><span className="loading loading-bars loading-lg"></span></div>
         }
         signUpPassWord(email, password)
-            .then(result => console.log(result.user))
-            .catch(error => console.log(error.message))
+            .then(result => {
+                if (result.user) {
+                    navigate(location?.state ? location.state : "/"),
+                        toast.success('Successfully Login!')
+                }
+            })
+
+            .catch(err => {
+                console.log(err.message)
+                toast.error(err.message)
+            })
         console.log(email, password);
-        navigate("/dashboard")
     }
     return user ? <LoggedUserInfo></LoggedUserInfo> : (
         <div className="hero  bg-base-200">
@@ -55,7 +65,7 @@ const Register = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
-                    <p className="text-center py-2">Already Register? <Link className="text-blue-500 font-semibold" to="/login">Login</Link></p>
+                    <p className="text-center py-2">Already Register? <Link state={location.state} className="text-blue-500 font-semibold" to="/login">Login</Link></p>
                 </div>
                 <SocialSignIn></SocialSignIn>
             </div>
