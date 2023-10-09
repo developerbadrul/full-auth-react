@@ -11,7 +11,6 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/courses">Courses</NavLink></li>
         <li><NavLink to="/webinars">Webinars</NavLink></li>
-        <li><NavLink to="/blog">Blog</NavLink></li>
         {user && <li><NavLink to="/dashboard">Dashboard</NavLink></li>}
     </>
 

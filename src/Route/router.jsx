@@ -3,18 +3,18 @@ import Home from "../Pages/Home/Home";
 import Root from "../root";
 import Courses from "../Pages/Courses/Courses";
 import Webinars from "../Pages/Webinars/Webinars";
-import Blog from "../Pages/Blog/Blog";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import CoursesDetails from "../Pages/CoursesDetails/CoursesDetails";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const myRoute = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
-        errorElement: <h1>404 Not Found</h1>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -32,10 +32,6 @@ const myRoute = createBrowserRouter([
             {
                 path: "/webinars",
                 element: <Webinars></Webinars>
-            },
-            {
-                path: "/blog",
-                element: <Blog></Blog>
             },
             {
                 path: "/login",
