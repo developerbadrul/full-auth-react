@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialSignIn from "../../components/SocialSignIn/SocialSignIn";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import LoggedUserInfo from "../../components/LoogedUserInfo/LoggedUserInfo";
+// import LoggedUserInfo from "../../components/LoogedUserInfo/LoggedUserInfo";
 import toast from "react-hot-toast";
 
 
@@ -32,7 +32,7 @@ const Register = () => {
             })
         console.log(email, password);
     }
-    return user ? <LoggedUserInfo></LoggedUserInfo> : (
+    return user ? <div className="flex items-center justify-center h-screen"><span className="loading loading-bars loading-lg"></span></div> : (
         <div className="hero  bg-base-200">
             <div className="hero-content flex-col">
                 <h1 className="text-3xl font-bold">Register now!</h1>
@@ -65,7 +65,7 @@ const Register = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
-                    <p className="text-center py-2">Already Register? <Link state={location.state} className="text-blue-500 font-semibold" to="/login">Login</Link></p>
+                    <p className="text-center py-2">Already Register? <Link  className="text-blue-500 font-semibold" to="/login">Login</Link></p>
                 </div>
                 <SocialSignIn></SocialSignIn>
             </div>

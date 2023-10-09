@@ -3,15 +3,11 @@ import Banner from "../../assets/single-instructor-1.png"
 import { PiFolderSimpleLockFill } from "react-icons/pi";
 import { BiSupport, BiBookBookmark } from "react-icons/bi";
 import About from "../../assets/about-pic.jpg";
-import Event from "../../components/Event/Event";
-import { useEffect, useState } from "react";
+// import Event from "../../components/Event/Event";
+// import { useEffect, useState } from "react";
+import Events from "../../components/Events/Events";
 const Home = () => {
-    const [events, setEvent] = useState(null);
-    useEffect(() => {
-        fetch("/events.json")
-            .then(res => res.json())
-            .then(data => setEvent(data))
-    }, [])
+    
 
     // console.log(events);
     return (
@@ -68,11 +64,7 @@ const Home = () => {
             {/* event section  */}
             <h1 className="text-center text-6xl font-bold py-4">UpComing Events</h1>
             <div className="w-11/12 mx-auto py-4">
-                <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {
-                        events?.map(event => <Event key={event.id} event={event}></Event>)
-                    }
-                </div>
+                <Events></Events>
             </div>
         </div>
     );

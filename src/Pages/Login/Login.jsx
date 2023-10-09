@@ -2,7 +2,7 @@ import { useLocation, useNavigate, Link } from "react-router-dom";
 import SocialSignIn from "../../components/SocialSignIn/SocialSignIn";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import LoggedUserInfo from "../../components/LoogedUserInfo/LoggedUserInfo";
+// import LoggedUserInfo from "../../components/LoogedUserInfo/LoggedUserInfo";
 import toast from 'react-hot-toast';
 
 
@@ -38,7 +38,8 @@ const Login = () => {
 
     }
     return user ? (
-        <LoggedUserInfo></LoggedUserInfo>
+        <div className="flex items-center justify-center h-screen"><span className="loading loading-bars loading-lg"></span></div>
+
     ) : (
         <div className="hero  bg-base-200">
             <div className="hero-content flex-col">
