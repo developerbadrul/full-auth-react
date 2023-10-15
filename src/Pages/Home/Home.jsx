@@ -1,17 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
-import Banner from "../../assets/single-instructor-1.png"
 import { PiFolderSimpleLockFill } from "react-icons/pi";
 import { BiSupport, BiBookBookmark } from "react-icons/bi";
-import About from "../../assets/about-pic.jpg";
 import Events from "../../components/Events/Events";
+import Teacher1 from "../../assets/teacher1.png";
+import Teacher2 from "../../assets/teacher 2.png"
+import AOS from "aos"
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 const Home = () => {
     
-
+    useEffect(()=>{
+        AOS.init({duration: 2000})
+    },[])
     // console.log(events);
     return (
         <div>
             {/* banner section  */}
-            <div className="bg-gradient-to-r from-cyan-200 to-white-500">
+            <div data-aos="flip-left" className="bg-gradient-to-r from-cyan-200 to-white-500">
                 <div className="flex flex-col md:flex-row p-2 md:w-11/12 mx-auto items-center">
                     <div id="banner-left-side">
                         <p className="text-orange-600 text-2xl font-bold">Start learning from home</p>
@@ -19,13 +24,13 @@ const Home = () => {
                         <p className="text-xl font-bold">I'm highly experienced in web programming. I'm teaching online <br /> for about 20+ years. I can help you to improve your skill.</p>
                     </div>
                     <div id="banner-right-sides">
-                        <img src={Banner} alt="banner" />
+                        <img src={Teacher1} alt="banner" />
                     </div>
                 </div>
             </div>
             {/* feature section  */}
             <h1 className="text-6xl font-bold text-center mt-4">Features</h1>
-            <div className="flex flex-col md:flex-row gap-4 md:w-11/12 mx-auto justify-center py-7">
+            <div data-aos="fade-up" className="flex flex-col md:flex-row gap-4 md:w-11/12 mx-auto justify-center py-7">
                 <div className="card card-side bg-base-100 shadow-2xl">
                     <figure><PiFolderSimpleLockFill className="text-[300px] text-orange-600 px-3"></PiFolderSimpleLockFill></figure>
                     <div className="card-body">
@@ -49,9 +54,9 @@ const Home = () => {
                 </div>
             </div>
             {/* about me section  */}
-            <div className="flex flex-col md:flex-row p-2 md:w-11/12 mx-auto items-center gap-10 py-10">
+            <div data-aos="fade-right" className="flex flex-col md:flex-row p-2 md:w-11/12 mx-auto items-center gap-10 py-10">
                 <div id="about-left-side" className="basis-1/2">
-                    <img className="rounded-lg" src={About} alt="about" />
+                    <img className="rounded-lg" src={Teacher2} alt="about" />
                 </div>
                 <div id="about-right-side" className="basis-1/2">
                     <p className="text-orange-600 font-semibold text-xl">About Me</p>
@@ -60,8 +65,8 @@ const Home = () => {
                 </div>
             </div>
             {/* event section  */}
-            <h1 className="text-center text-6xl font-bold py-4">UpComing Events</h1>
-            <div className="w-11/12 mx-auto py-4">
+            <h1  className="text-center text-6xl font-bold py-4">UpComing Events</h1>
+            <div data-aos="fade-left" className="w-11/12 mx-auto py-4">
                 <Events></Events>
             </div>
         </div>

@@ -14,7 +14,7 @@ const CoursesDetails = () => {
 
     console.log("show details", showDetails);
     return (
-        <div className="grid md:grid-cols-3 px-6 max-w-full mx-auto md:w-11/12 gap-4 py-6 space-y-4">
+        <div className="grid md:grid-cols-3  px-6 max-w-full mx-auto md:w-11/12 gap-4 py-6 space-y-4">
             <div id="show-details-left" className="md:col-span-2">
                 {/* course details  */}
                 <div className="tabs">

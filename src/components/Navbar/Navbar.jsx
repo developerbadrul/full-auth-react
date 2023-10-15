@@ -1,8 +1,9 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import Logo from "../../assets/logo.png"
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import toast from "react-hot-toast";
+import noUser from "../../assets/noUser.jpg";
+import Logo2 from "../../assets/Logo2.png"
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -11,16 +12,14 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/courses">Courses</NavLink></li>
         <li><NavLink to="/webinars">Webinars</NavLink></li>
-        {user && <li><NavLink to="/dashboard">Dashboard</NavLink></li>}
+        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
     </>
 
     const handleLogOut = () => {
         logOut()
             .then(result => {
                 console.log("successfull Logout", result)
-                if (!result) {
-                    toast.success("Successfully Logout")
-                }
+                toast.success("Successfully Logout")
             })
             .catch(err => {
                 toast.error(err)
@@ -41,7 +40,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to="/"><img className="md:w-1/2" src={Logo} alt="Omexo" /></Link>
+                    <Link to="/"><img className="md:w-20" src={Logo2} alt="Omexo" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -49,6 +48,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    {
+                        user && <div className="hidden md:flex items-center gap-4 mr-4 text-blue-500"><img className="w-9 rounded-full" src={user.photoURL || noUser} alt="avater"
+                        /> <p>{user.displayName || user.email}</p> </div>
+                    }
                     {
                         user ? <button className="btn btn-error" onClick={handleLogOut}>LogOut</button>
                             : <Link to={`/login`} className="btn btn-primary">Login</Link>

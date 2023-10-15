@@ -8,32 +8,29 @@ import toast from 'react-hot-toast';
 
 // const notify = () => toast('Here is your toast.');
 const Login = () => {
-    const { signInPass, user, loading } = useContext(AuthContext)
+    const { signInPass, user } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
     console.log("path name in login", location);
-    const handleLogin = (e) => {
+    const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        if (loading) {
-            return <div className="flex items-center justify-center h-screen"><span className="loading loading-bars loading-lg"></span></div>
-        }
+        // if (loading) {
+        //     return <div className="flex items-center justify-center h-screen"><span className="loading loading-bars loading-lg"></span></div>
+        // }
 
         signInPass(email, password)
             .then(result => {
-                if (result.user) {
-                    navigate(location?.state ? location.state : "/");
-                    toast.success('Successfully Login!')
-                }
+
+                navigate(location?.state ? location.state : "/");
+                toast.success('Successfully Login!', result)
+
             })
 
             .catch(err => {
-                if (err) {
-                    console.log(err.message);
-                    toast.error(err.message);
-                }
-
+                console.log(err.message);
+                toast.error(err.message);
             })
 
     }

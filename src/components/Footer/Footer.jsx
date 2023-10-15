@@ -1,9 +1,10 @@
-import Logo from "../../assets/logo.png"
+import Logo2 from "../../assets/Logo2.png"
+
 const Footer = () => {
     return (
         <footer className="footer footer-center p-10 bg-primary text-primary-content">
         <aside>
-          <img src={Logo} alt="logo" />
+          <img className="w-1/2" src={Logo2} alt="logo" />
           <p className="font-bold">
             Omexo Education Center <br/>Providing reliable tech since 2022
           </p> 

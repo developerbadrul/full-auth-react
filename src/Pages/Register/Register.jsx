@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 
 const Register = () => {
-    const { signUpPassWord, user, loading } = useContext(AuthContext)
+    const { signUpPassWord, user } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     console.log("location in register", location);
@@ -15,15 +15,13 @@ const Register = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        if (loading) {
-            return <div className="flex items-center justify-center h-screen"><span className="loading loading-bars loading-lg"></span></div>
-        }
+        // if (loading) {
+        //     return <div className="flex items-center justify-center h-screen"><span className="loading loading-bars loading-lg"></span></div>
+        // }
         signUpPassWord(email, password)
             .then(result => {
-                if (result.user) {
-                    navigate(location?.state ? location.state : "/"),
-                        toast.success('Successfully Login!')
-                }
+                navigate(location?.state ? location.state : "/"),
+                    toast.success('Successfully Login!', result)
             })
 
             .catch(err => {
@@ -62,10 +60,10 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
-                    <p className="text-center py-2">Already Register? <Link  className="text-blue-500 font-semibold" to="/login">Login</Link></p>
+                    <p className="text-center py-2">Already Register? <Link className="text-blue-500 font-semibold" to="/login">Login</Link></p>
                 </div>
                 <SocialSignIn></SocialSignIn>
             </div>
