@@ -1,5 +1,7 @@
 # Omexo Education Center
 
+<img src="https://i.ibb.co/b6xKY3Q/screencapture-allyshop-96cc6-web-app-2023-12-14-17-31-39-1.png"/>
+
 ### Summary of the Features 
 
 - Dynamic Content with React: Your web application leverages the power of React, a popular JavaScript library, to create dynamic and interactive user interfaces. React allows for the efficient rendering of components, enabling a seamless and responsive user experience.
